@@ -9,10 +9,10 @@ public:
     Student() : firstName("Unknown"), lastName("Unknown") {}
     Student(std::string first, std::string last) : firstName(first), lastName(last) {}
 
-    const std::string& FirstName() {
+    const std::string& FirstName() const {
         return firstName;
     }
-    const std::string& LastName() {
+    const std::string& LastName() const {
         return lastName;
     }
     Student& FirstName(const std::string setName) {
