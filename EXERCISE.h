@@ -1,5 +1,29 @@
 #pragma once
+#include <string>
 
 class Student {
-    //Write your code in here.
+protected:
+    std::string firstName;
+    std::string lastName;
+public:
+    Student() : firstName("Unknown"), lastName("Unknown") {}
+    Student(std::string first, std::string last) : firstName(first), lastName(last) {}
+
+    const std::string& FirstName() {
+        return firstName;
+    }
+    const std::string& LastName() {
+        return lastName;
+    }
+    Student& FirstName(const std::string setName) {
+        this->firstName = setName;
+        return *this;
+    }
+    Student& LastName(const std::string setName) {
+        this->lastName = setName;
+        return *this;
+    }
+    bool operator==(const Student& other) const {
+        return this->firstName == other.firstName and this->lastName == other.lastName;
+    }
 };
